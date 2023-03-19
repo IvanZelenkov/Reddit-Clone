@@ -19,7 +19,7 @@ public class MailService {
     private final JavaMailSender javaMailSender;
 
     @Async
-    void sendMail(NotificationEmail notificationEmail) {
+    public void sendMail(NotificationEmail notificationEmail) {
         MimeMessagePreparator messagePreparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setFrom("reddit.clone@email.com");
