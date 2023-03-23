@@ -9,6 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @AllArgsConstructor
 @Slf4j
@@ -22,5 +25,14 @@ public class SubredditService {
         Subreddit savedSubreddit = subredditRepository.save(subredditMapper.mapDtoToSubreddit(subredditDto));
         subredditDto.setId(savedSubreddit.getId());
         return subredditDto;
+    }
+
+    @Transactional(readOnly = true)
+    public List<SubredditDto> getAll() {
+        return subredditRepository
+                .findAll()
+                .stream()
+                .map(subredditMapper::mapSubredditToDto)
+                .collect(Collectors.toList());
     }
 }

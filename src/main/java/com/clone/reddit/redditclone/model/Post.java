@@ -1,8 +1,6 @@
 package com.clone.reddit.redditclone.model;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.time.Instant;
