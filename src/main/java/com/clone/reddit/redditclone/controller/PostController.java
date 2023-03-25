@@ -1,5 +1,6 @@
 package com.clone.reddit.redditclone.controller;
 
+import com.clone.reddit.redditclone.dto.PostRequest;
 import com.clone.reddit.redditclone.dto.PostResponse;
 import com.clone.reddit.redditclone.service.PostService;
 import lombok.AllArgsConstructor;
@@ -23,28 +24,28 @@ public class PostController {
     }
 
     @GetMapping
-    public List<PostResponse> getAllPosts() {
+    public ResponseEntity<List<PostResponse>> getAllPosts() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(postService.getAllPosts());
     }
 
     @GetMapping("/{id}")
-    public PostResponse getPost(@PathVariable Long id) {
+    public ResponseEntity<PostResponse> getPost(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(postService.getPost(id));
     }
 
     @GetMapping(params = "subredditId")
-    public List<PostResponse> getPostsBySubreddit(@RequestParam Long subredditId) {
+    public ResponseEntity<List<PostResponse>> getPostsBySubreddit(@RequestParam Long subredditId) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(postService.getPostsBySubreddit(subredditId));
     }
 
     @GetMapping(params = "username")
-    public List<PostResponse> getPostsByUsername(@RequestParam String username) {
+    public ResponseEntity<List<PostResponse>> getPostsByUsername(@RequestParam String username) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(postService.getPostsByUsername(username));
