@@ -29,7 +29,7 @@ public class CommentController {
     }
 
     @GetMapping(params = "username")
-    public ResponseEntity<List<CommentDto>> getAllCommentsForUser(@RequestParam String username){
+    public ResponseEntity<List<CommentDto>> getAllCommentsByUser(@RequestParam String username){
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(commentService.getAllCommentsByUser(username));
