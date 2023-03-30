@@ -31,10 +31,10 @@ public class PostController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PostResponse> getPost(@PathVariable Long id) {
+    public ResponseEntity<PostResponse> getPostById(@PathVariable Long id) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(postService.getPost(id));
+                .body(postService.getPostById(id));
     }
 
     @GetMapping(params = "subredditId")

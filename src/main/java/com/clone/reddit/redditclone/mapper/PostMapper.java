@@ -17,6 +17,6 @@ public interface PostMapper {
 
     @Mapping(target = "id", source = "postId")
     @Mapping(target = "subredditName", source = "subreddit.name")
-    @Mapping(target = "userName", source = "user.username")
+    @Mapping(target = "username", source = "user.username")
     PostResponse mapToDto(Post post);
 }

@@ -40,12 +40,13 @@ public class PostService {
     }
 
     @Transactional(readOnly = true)
-    public PostResponse getPost(Long id) {
+    public PostResponse getPostById(Long id) {
         Post post = postRepository.findById(id)
                 .orElseThrow(() -> new PostNotFoundException(id.toString()));
         return postMapper.mapToDto(post);
     }
 
+    @Transactional(readOnly = true)
     public List<PostResponse> getAllPosts() {
         return postRepository.findAll()
                 .stream()
