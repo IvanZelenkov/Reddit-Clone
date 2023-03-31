@@ -21,10 +21,10 @@ public class JwtProvider {
 
     public String generateToken(Authentication authentication) {
         User principal = (User) authentication.getPrincipal();
-        return generateTokenWithUserName(principal.getUsername());
+        return generateTokenWithUsername(principal.getUsername());
     }
 
-    public String generateTokenWithUserName(String username) {
+    public String generateTokenWithUsername(String username) {
         // The JWT Claims Set is a JSON object representing the claims conveyed by a JSON Web Token.
         // issuer(String issuer) - Sets the issuer (iss) claim, which identifies the principal that issued the JWT.
         // issuedAt(Instant issuedAt) - Sets the issued at (iat) claim, which identifies the time at which the JWT was issued.
