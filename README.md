@@ -2,5 +2,4 @@
 
 ### Swagger UI
 
-
-![Screenshot 2023-03-23 at 15 09 32](https://user-images.githubusercontent.com/64171964/227340813-e4fd7dc5-e57a-4ba4-9759-17312294deac.png)
+![RedditCloneSwaggerUI html](https://user-images.githubusercontent.com/64171964/228996868-7be6f96b-ac00-4f1e-99bd-556c8b00bc6f.png)
