@@ -34,3 +34,4 @@ build/
 
 application.properties
 .DS_Store
+*.swp
